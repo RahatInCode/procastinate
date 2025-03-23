@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Procastinate</title>
 </head>
-<body>
+<body class="">
+    <div class="card w-96 bg-base-100 shadow-sm">
+        <div class="card-body">
+          <span class="badge badge-xs badge-warning">Ahmed Rahat</span>
+          <div class="text-center">
+            <h2 class="text-3xl font-bold text-center">Procastinate</h2>
+          </div>
+         <div class="flex gap-2">
+            <input type="text" class="input" id="" placeholder="add a task...">
+            <button class="btn btn-primary">Add</button>
+         </div>
+         <div>
+            <div class="relative w-64">
+                <select class="appearance-none w-full px-4 py-2 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white cursor-pointer">
+                  <option selected disabled>Type or select...</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+                <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                </div>
+              </div>
+              
+         </div>
+          <div class="mt-6">
+            <button class="btn btn-primary btn-block">Toggle Dark Mode</button>
+          </div>
+        </div>
+      </div>
     <script src="script.js"></script>
 </body>
 </html>
