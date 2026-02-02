@@ -139,10 +139,12 @@
                 padding: 0;
                 overflow: hidden;
             }
+            
             .main-content {
                 margin-left: 0;
                 padding: 24px;
             }
+            
             .mobile-nav {
                 display: block !important;
             }
@@ -293,6 +295,397 @@
             padding: 20px;
             margin-bottom: 32px;
         }
+
+        /* ===== STUDY PLAN STYLES ===== */
+        .study-plan-section {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 6px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .study-plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .study-plan-header-left h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #37352f;
+            margin-bottom: 2px;
+        }
+
+        .study-plan-header-left p {
+            font-size: 13px;
+            color: #78716c;
+        }
+
+        .study-plan-tabs {
+            display: flex;
+            gap: 4px;
+            background: #ffffff;
+            border: 1px solid #e9e9e7;
+            border-radius: 6px;
+            padding: 3px;
+        }
+
+        .study-plan-tab {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 4px;
+            background: transparent;
+            font-size: 13px;
+            font-weight: 500;
+            color: #78716c;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.15s;
+        }
+
+        .study-plan-tab:hover {
+            background: #f7f6f3;
+        }
+
+        .study-plan-tab.active {
+            background: #16a34a;
+            color: #fff;
+        }
+
+        .sp-subject-selector {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .sp-subject-pill {
+            padding: 6px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 20px;
+            background: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            color: #37352f;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.15s;
+            white-space: nowrap;
+        }
+
+        .sp-subject-pill:hover {
+            border-color: #16a34a;
+            background: #f0fdf4;
+        }
+
+        .sp-subject-pill.active {
+            background: #16a34a;
+            color: #fff;
+            border-color: #16a34a;
+        }
+
+        .sp-plan-wrapper {
+            overflow-x: auto;
+            border: 1px solid #e9e9e7;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .sp-plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        .sp-plan-table thead th {
+            background: #f7f6f3;
+            font-size: 11px;
+            font-weight: 600;
+            color: #9b9a97;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e9e9e7;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+        }
+
+        .sp-plan-table thead th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 2;
+            min-width: 150px;
+        }
+
+        .sp-plan-table thead th.sp-month-head {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .sp-plan-table tbody tr {
+            border-bottom: 1px solid #f0f0ee;
+            transition: background 0.1s;
+        }
+
+        .sp-plan-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .sp-plan-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        .sp-row-label {
+            position: sticky;
+            left: 0;
+            background: #fff;
+            z-index: 1;
+            padding: 10px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #37352f;
+            border-right: 1px solid #e9e9e7;
+            white-space: nowrap;
+        }
+
+        .sp-plan-table tbody tr:hover .sp-row-label {
+            background: #fafafa;
+        }
+
+        .sp-cell {
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid #f0f0ee;
+            min-width: 100px;
+        }
+
+        .sp-cell:last-child {
+            border-right: none;
+        }
+
+        .sp-chapter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            justify-content: center;
+        }
+
+        .sp-chapter-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 26px;
+            height: 26px;
+            padding: 0 6px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+            cursor: default;
+            white-space: nowrap;
+        }
+
+        .sp-chapter-pill.done {
+            background: #bbdefb;
+            color: #1565c0;
+            border-color: #90caf9;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .sp-time-row .sp-cell {
+            background: #fefce8;
+        }
+
+        .sp-time-input {
+            width: 70px;
+            padding: 4px 6px;
+            border: 1px solid #e9e9e7;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            color: #37352f;
+            font-family: inherit;
+            background: #fff;
+            transition: border-color 0.15s;
+        }
+
+        .sp-time-input:focus {
+            outline: none;
+            border-color: #16a34a;
+            box-shadow: 0 0 0 2px rgba(22,163,74,0.15);
+        }
+
+        .sp-time-label {
+            font-size: 10px;
+            color: #9b9a97;
+            margin-top: 2px;
+        }
+
+        .sp-summary-bar {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .sp-summary-card {
+            flex: 1;
+            min-width: 140px;
+            background: #fff;
+            border: 1px solid #e9e9e7;
+            border-radius: 6px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sp-summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .sp-summary-icon.green { background: #dcfce7; }
+        .sp-summary-icon.blue  { background: #dbeafe; }
+        .sp-summary-icon.amber { background: #fef3c7; }
+        .sp-summary-icon.red   { background: #fee2e2; }
+
+        .sp-summary-text .sp-sum-val {
+            font-size: 20px;
+            font-weight: 700;
+            color: #37352f;
+            line-height: 1.2;
+        }
+
+        .sp-summary-text .sp-sum-label {
+            font-size: 11px;
+            color: #9b9a97;
+        }
+
+        .sp-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.35);
+            z-index: 500;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sp-modal-overlay.visible {
+            display: flex;
+        }
+
+        .sp-modal {
+            background: #fff;
+            border-radius: 8px;
+            width: 420px;
+            max-width: 90vw;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+            padding: 24px;
+            animation: sp-modal-in 0.18s ease;
+        }
+
+        @keyframes sp-modal-in {
+            from { opacity:0; transform: translateY(12px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .sp-modal h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #37352f;
+            margin-bottom: 4px;
+        }
+
+        .sp-modal .sp-modal-sub {
+            font-size: 13px;
+            color: #9b9a97;
+            margin-bottom: 18px;
+        }
+
+        .sp-modal label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #78716c;
+            margin-bottom: 5px;
+            margin-top: 12px;
+        }
+
+        .sp-modal select,
+        .sp-modal input[type="text"],
+        .sp-modal input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #e9e9e7;
+            border-radius: 5px;
+            font-size: 13px;
+            font-family: inherit;
+            color: #37352f;
+            background: #fff;
+            transition: border-color 0.15s;
+        }
+
+        .sp-modal select:focus,
+        .sp-modal input:focus {
+            outline: none;
+            border-color: #16a34a;
+            box-shadow: 0 0 0 2px rgba(22,163,74,0.12);
+        }
+
+        .sp-modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 22px;
+        }
+
+        .sp-btn-cancel {
+            padding: 7px 16px;
+            border: 1px solid #e9e9e7;
+            border-radius: 5px;
+            background: #fff;
+            color: #37352f;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .sp-btn-cancel:hover { background: #f7f6f3; }
+
+        .sp-btn-save {
+            padding: 7px 18px;
+            border: none;
+            border-radius: 5px;
+            background: #16a34a;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.15s;
+        }
+
+        .sp-btn-save:hover { background: #15803d; }
+        /* ===== END STUDY PLAN ===== */
 
         .academic-header {
             display: flex;
@@ -451,436 +844,6 @@
         .deadline-good {
             color: #059669;
         }
-
-        /* ===== STUDY PLAN STYLES ===== */
-        .study-plan-section {
-            background: #f0fdf4;
-            border: 1px solid #86efac;
-            border-radius: 6px;
-            padding: 24px;
-            margin-bottom: 32px;
-        }
-
-        .study-plan-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .study-plan-header-left h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #37352f;
-            margin-bottom: 2px;
-        }
-
-        .study-plan-header-left p {
-            font-size: 13px;
-            color: #78716c;
-        }
-
-        .study-plan-tabs {
-            display: flex;
-            gap: 4px;
-            background: #ffffff;
-            border: 1px solid #e9e9e7;
-            border-radius: 6px;
-            padding: 3px;
-        }
-
-        .study-plan-tab {
-            padding: 6px 14px;
-            border: none;
-            border-radius: 4px;
-            background: transparent;
-            font-size: 13px;
-            font-weight: 500;
-            color: #78716c;
-            cursor: pointer;
-            font-family: inherit;
-            transition: all 0.15s;
-        }
-
-        .study-plan-tab:hover {
-            background: #f7f6f3;
-        }
-
-        .study-plan-tab.active {
-            background: #16a34a;
-            color: #fff;
-        }
-
-        /* Subject Selector Row */
-        .sp-subject-selector {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .sp-subject-pill {
-            padding: 6px 14px;
-            border: 1px solid #d1d5db;
-            border-radius: 20px;
-            background: #fff;
-            font-size: 12px;
-            font-weight: 500;
-            color: #37352f;
-            cursor: pointer;
-            font-family: inherit;
-            transition: all 0.15s;
-            white-space: nowrap;
-        }
-
-        .sp-subject-pill:hover {
-            border-color: #16a34a;
-            background: #f0fdf4;
-        }
-
-        .sp-subject-pill.active {
-            background: #16a34a;
-            color: #fff;
-            border-color: #16a34a;
-        }
-
-        /* Plan Grid (Gantt-style) */
-        .sp-plan-wrapper {
-            overflow-x: auto;
-            border: 1px solid #e9e9e7;
-            border-radius: 6px;
-            background: #fff;
-        }
-
-        .sp-plan-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 700px;
-        }
-
-        .sp-plan-table thead th {
-            background: #f7f6f3;
-            font-size: 11px;
-            font-weight: 600;
-            color: #9b9a97;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-            padding: 10px 12px;
-            text-align: left;
-            border-bottom: 1px solid #e9e9e7;
-            white-space: nowrap;
-            position: sticky;
-            top: 0;
-        }
-
-        .sp-plan-table thead th:first-child {
-            position: sticky;
-            left: 0;
-            z-index: 2;
-            min-width: 150px;
-        }
-
-        .sp-plan-table thead th.sp-month-head {
-            text-align: center;
-            min-width: 100px;
-        }
-
-        .sp-plan-table tbody tr {
-            border-bottom: 1px solid #f0f0ee;
-            transition: background 0.1s;
-        }
-
-        .sp-plan-table tbody tr:last-child {
-            border-bottom: none;
-        }
-
-        .sp-plan-table tbody tr:hover {
-            background: #fafafa;
-        }
-
-        .sp-row-label {
-            position: sticky;
-            left: 0;
-            background: #fff;
-            z-index: 1;
-            padding: 10px 12px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #37352f;
-            border-right: 1px solid #e9e9e7;
-            white-space: nowrap;
-        }
-
-        .sp-plan-table tbody tr:hover .sp-row-label {
-            background: #fafafa;
-        }
-
-        .sp-cell {
-            padding: 8px;
-            text-align: center;
-            vertical-align: middle;
-            border-right: 1px solid #f0f0ee;
-            min-width: 100px;
-        }
-
-        .sp-cell:last-child {
-            border-right: none;
-        }
-
-        /* Chapter pills inside cells */
-        .sp-chapter-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4px;
-            justify-content: center;
-        }
-
-        .sp-chapter-pill {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 26px;
-            height: 26px;
-            padding: 0 6px;
-            border-radius: 5px;
-            font-size: 11px;
-            font-weight: 600;
-            background: #e8f5e9;
-            color: #2e7d32;
-            border: 1px solid #a5d6a7;
-            cursor: default;
-            white-space: nowrap;
-        }
-
-        .sp-chapter-pill.done {
-            background: #bbdefb;
-            color: #1565c0;
-            border-color: #90caf9;
-            text-decoration: line-through;
-            opacity: 0.7;
-        }
-
-        .sp-cell-empty {
-            color: #bbb;
-            font-size: 18px;
-        }
-
-        /* Add-chapter btn */
-        .sp-add-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            padding: 3px 8px;
-            border: 1px dashed #a3a3a3;
-            border-radius: 4px;
-            background: transparent;
-            color: #78716c;
-            font-size: 11px;
-            cursor: pointer;
-            font-family: inherit;
-            transition: all 0.15s;
-            margin-top: 4px;
-        }
-
-        .sp-add-btn:hover {
-            border-color: #16a34a;
-            color: #16a34a;
-            background: #f0fdf4;
-        }
-
-        /* Time allocation row */
-        .sp-time-row .sp-cell {
-            background: #fefce8;
-        }
-
-        .sp-time-input {
-            width: 70px;
-            padding: 4px 6px;
-            border: 1px solid #e9e9e7;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-            text-align: center;
-            color: #37352f;
-            font-family: inherit;
-            background: #fff;
-            transition: border-color 0.15s;
-        }
-
-        .sp-time-input:focus {
-            outline: none;
-            border-color: #16a34a;
-            box-shadow: 0 0 0 2px rgba(22,163,74,0.15);
-        }
-
-        .sp-time-input::placeholder {
-            color: #bbb;
-        }
-
-        .sp-time-label {
-            font-size: 10px;
-            color: #9b9a97;
-            margin-top: 2px;
-        }
-
-        /* Summary bar */
-        .sp-summary-bar {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-            flex-wrap: wrap;
-        }
-
-        .sp-summary-card {
-            flex: 1;
-            min-width: 140px;
-            background: #fff;
-            border: 1px solid #e9e9e7;
-            border-radius: 6px;
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .sp-summary-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-
-        .sp-summary-icon.green { background: #dcfce7; }
-        .sp-summary-icon.blue  { background: #dbeafe; }
-        .sp-summary-icon.amber { background: #fef3c7; }
-        .sp-summary-icon.red   { background: #fee2e2; }
-
-        .sp-summary-text .sp-sum-val {
-            font-size: 20px;
-            font-weight: 700;
-            color: #37352f;
-            line-height: 1.2;
-        }
-
-        .sp-summary-text .sp-sum-label {
-            font-size: 11px;
-            color: #9b9a97;
-        }
-
-        /* Modal overlay */
-        .sp-modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.35);
-            z-index: 500;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .sp-modal-overlay.visible {
-            display: flex;
-        }
-
-        .sp-modal {
-            background: #fff;
-            border-radius: 8px;
-            width: 420px;
-            max-width: 90vw;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
-            padding: 24px;
-            animation: sp-modal-in 0.18s ease;
-        }
-
-        @keyframes sp-modal-in {
-            from { opacity:0; transform: translateY(12px); }
-            to   { opacity:1; transform: translateY(0); }
-        }
-
-        .sp-modal h3 {
-            font-size: 17px;
-            font-weight: 700;
-            color: #37352f;
-            margin-bottom: 4px;
-        }
-
-        .sp-modal .sp-modal-sub {
-            font-size: 13px;
-            color: #9b9a97;
-            margin-bottom: 18px;
-        }
-
-        .sp-modal label {
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            color: #78716c;
-            margin-bottom: 5px;
-            margin-top: 12px;
-        }
-
-        .sp-modal select,
-        .sp-modal input[type="text"],
-        .sp-modal input[type="number"] {
-            width: 100%;
-            padding: 8px 10px;
-            border: 1px solid #e9e9e7;
-            border-radius: 5px;
-            font-size: 13px;
-            font-family: inherit;
-            color: #37352f;
-            background: #fff;
-            transition: border-color 0.15s;
-        }
-
-        .sp-modal select:focus,
-        .sp-modal input:focus {
-            outline: none;
-            border-color: #16a34a;
-            box-shadow: 0 0 0 2px rgba(22,163,74,0.12);
-        }
-
-        .sp-modal-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 8px;
-            margin-top: 22px;
-        }
-
-        .sp-btn-cancel {
-            padding: 7px 16px;
-            border: 1px solid #e9e9e7;
-            border-radius: 5px;
-            background: #fff;
-            color: #37352f;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        .sp-btn-cancel:hover { background: #f7f6f3; }
-
-        .sp-btn-save {
-            padding: 7px 18px;
-            border: none;
-            border-radius: 5px;
-            background: #16a34a;
-            color: #fff;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: inherit;
-            transition: background 0.15s;
-        }
-
-        .sp-btn-save:hover { background: #15803d; }
-
-        /* ===== END STUDY PLAN ===== */
 
         /* Protocols */
         .protocols-list {
@@ -1453,17 +1416,27 @@
         <div class="sidebar-header">
             <div class="sidebar-title">📊 Momentum</div>
         </div>
-        <div class="sidebar-nav" id="sidebarNav"></div>
-        <div class="month-selector" id="monthSelector"></div>
+        
+        <div class="sidebar-nav" id="sidebarNav">
+            <!-- Navigation items will be inserted here -->
+        </div>
+        
+        <div class="month-selector" id="monthSelector">
+            <!-- Month selector will be inserted here -->
+        </div>
     </div>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
-        <div class="mobile-nav-items" id="mobileNav"></div>
+        <div class="mobile-nav-items" id="mobileNav">
+            <!-- Mobile nav items will be inserted here -->
+        </div>
     </div>
 
     <!-- Main Content -->
-    <div class="main-content" id="mainContent"></div>
+    <div class="main-content" id="mainContent">
+        <!-- Content will be inserted here -->
+    </div>
 
     <!-- Study Plan Modal -->
     <div class="sp-modal-overlay" id="spModalOverlay">
@@ -1482,768 +1455,1172 @@
 
             <div class="sp-modal-actions">
                 <button class="sp-btn-cancel" onclick="closeStudyPlanModal()">Cancel</button>
-                <button class="sp-btn-save"  onclick="saveStudyPlanModal()">Save</button>
+                <button class="sp-btn-save" onclick="saveStudyPlanModal()">Save</button>
             </div>
         </div>
     </div>
 
     <script>
-    // ─── Utility ────────────────────────────────────────────────
-    function getDaysInMonth(year, month) {
-        return new Date(year, month + 1, 0).getDate();
-    }
-    function getMonthName(m) {
-        return ['January','February','March','April','May','June',
-                'July','August','September','October','November','December'][m];
-    }
-    function getMonthShort(m) {
-        return ['Jan','Feb','Mar','Apr','May','Jun',
-                'Jul','Aug','Sep','Oct','Nov','Dec'][m];
-    }
-    function getDayName(date) {
-        return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][date.getDay()];
-    }
-
-    // ─── Data Initialization ───────────────────────────────────
-    function initializeMonthData(year, month) {
-        return {
-            year, month,
-            protocols: Array(10).fill(''),
-            habits: Array(12).fill(null).map((_,i) => ({
-                name: `Habit ${i+1}`,
-                days: Array(getDaysInMonth(year, month)).fill(null)
-            })),
-            goals: Array(5).fill(null).map(() => ({
-                title: '',
-                steps: Array(3).fill(null).map(() => ({text:'', completed:false}))
-            })),
-            achievements: Array(10).fill(''),
-            notes: ''
-        };
-    }
-
-    function initializeAcademicData() {
-        return {
-            subjects: [
-                { name:'Business Math',           year:'2nd Year', chapters:Array(6).fill(false), examDate:'2026-09-15' },
-                { name:'Business Statistics',     year:'3rd Year', chapters:Array(6).fill(false), examDate:'2026-11-01' },
-                { name:'Management Accounting',   year:'3rd Year', chapters:Array(6).fill(false), examDate:'2026-11-02' },
-                { name:'Taxation in Bangladesh',  year:'3rd Year', chapters:Array(6).fill(false), examDate:'2026-08-03' },
-                { name:'Financial Management',    year:'4th Year', chapters:Array(6).fill(false), examDate:'2026-12-01' },
-                { name:'Project Management',      year:'4th Year', chapters:Array(6).fill(false), examDate:'2026-12-02' },
-                { name:'Investment Management',   year:'4th Year', chapters:Array(6).fill(false), examDate:'2026-12-03' }
-            ]
-        };
-    }
-
-    /**
-     * studyPlans structure  (persisted in localStorage key "studyPlans")
-     * {
-     *   "<subjectIndex>": {
-     *     months: {
-     *       "<YYYY-MM>": { chapters:[1,3], hours: "4" }   // which chapters targeted, hours/week
-     *     },
-     *     weeks: {
-     *       "<YYYY>-W<weekNumber>": { chapters:[2], hours:"2" }
-     *     }
-     *   }
-     * }
-     */
-    function initializeStudyPlans() {
-        let plans = {};
-        return plans;
-    }
-
-    // ─── App State ──────────────────────────────────────────────
-    let state = {
-        view: 'monthly',
-        selectedMonth: { year: new Date().getFullYear(), month: new Date().getMonth() },
-        yearData: {},
-        academicData: null,
-        studyPlans: {},
-        // study-plan UI state
-        spView: 'monthly',          // 'monthly' | 'weekly'
-        spSelectedSubject: 0
-    };
-
-    let progressChart = null;
-
-    // ─── Persistence ────────────────────────────────────────────
-    function loadData() {
-        const saved = localStorage.getItem('momentumTracker');
-        if (saved) state.yearData = JSON.parse(saved);
-        else {
-            const y = new Date().getFullYear();
-            for (let m=0; m<12; m++) state.yearData[`${y}-${m}`] = initializeMonthData(y,m);
+        // Utility Functions
+        function getDaysInMonth(year, month) {
+            return new Date(year, month + 1, 0).getDate();
         }
 
-        const acSaved = localStorage.getItem('academicTracker');
-        state.academicData = acSaved ? JSON.parse(acSaved) : initializeAcademicData();
-
-        const spSaved = localStorage.getItem('studyPlans');
-        state.studyPlans = spSaved ? JSON.parse(spSaved) : initializeStudyPlans();
-    }
-
-    function saveData() {
-        localStorage.setItem('momentumTracker', JSON.stringify(state.yearData));
-        localStorage.setItem('academicTracker', JSON.stringify(state.academicData));
-        localStorage.setItem('studyPlans',      JSON.stringify(state.studyPlans));
-    }
-
-    // ─── Month data helpers ─────────────────────────────────────
-    function getCurrentMonthData() {
-        const key = `${state.selectedMonth.year}-${state.selectedMonth.month}`;
-        if (!state.yearData[key])
-            state.yearData[key] = initializeMonthData(state.selectedMonth.year, state.selectedMonth.month);
-        return state.yearData[key];
-    }
-    function updateMonthData(updates) {
-        const key = `${state.selectedMonth.year}-${state.selectedMonth.month}`;
-        state.yearData[key] = { ...getCurrentMonthData(), ...updates };
-        saveData();
-        render();
-    }
-
-    // ─── Navigation ─────────────────────────────────────────────
-    function changeView(v) { state.view = v; render(); }
-    function changeMonth(dir) {
-        let m = state.selectedMonth.month + dir, y = state.selectedMonth.year;
-        if (m>11) { m=0; y++; } else if (m<0) { m=11; y--; }
-        state.selectedMonth = {year:y, month:m};
-        render();
-    }
-    function selectMonth(year, month) {
-        state.selectedMonth = {year, month};
-        state.view = 'monthly';
-        render();
-    }
-
-    // ─── Academic helpers ───────────────────────────────────────
-    function toggleChapter(si, ci) {
-        state.academicData.subjects[si].chapters[ci] = !state.academicData.subjects[si].chapters[ci];
-        saveData(); render();
-    }
-
-    // ─── Study Plan helpers ─────────────────────────────────────
-    function getSubjectPlan(si) {
-        if (!state.studyPlans[si]) state.studyPlans[si] = { months:{}, weeks:{} };
-        return state.studyPlans[si];
-    }
-
-    // ISO week number for a date
-    function getISOWeek(date) {
-        const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-        const dayNum = d.getUTCDay() || 7;
-        d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-        const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-        return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-    }
-
-    // Get weeks (Mon–Sun) that overlap a given month
-    function getWeeksForMonth(year, month) {
-        const days = getDaysInMonth(year, month);
-        const weeks = [];
-        const seen = new Set();
-        for (let d = 1; d <= days; d++) {
-            const date = new Date(year, month, d);
-            const wk = getISOWeek(date);
-            const key = `${year}-W${wk}`;
-            if (!seen.has(key)) { seen.add(key); weeks.push({ key, week: wk, year }); }
-        }
-        return weeks;
-    }
-
-    // ─── Study Plan Modal ───────────────────────────────────────
-    let spModalContext = {}; // { subjectIndex, periodKey }
-
-    function openStudyPlanModal(subjectIndex, periodKey) {
-        spModalContext = { subjectIndex, periodKey };
-        const subj = state.academicData.subjects[subjectIndex];
-        const plan = getSubjectPlan(subjectIndex);
-        const existing = (state.spView === 'monthly'
-            ? (plan.months[periodKey] || {})
-            : (plan.weeks[periodKey] || {}));
-
-        // Subject dropdown (read-only display)
-        const sSelect = document.getElementById('spModalSubject');
-        sSelect.innerHTML = state.academicData.subjects.map((s,i) =>
-            `<option value="${i}" ${i===subjectIndex?'selected':''}>${s.name}</option>`
-        ).join('');
-        sSelect.disabled = true;
-
-        // Period dropdown (read-only)
-        const pSelect = document.getElementById('spModalPeriod');
-        pSelect.innerHTML = `<option value="${periodKey}" selected>${periodKey.replace('W',' W')}</option>`;
-        pSelect.disabled = true;
-
-        // Chapter checkboxes
-        const chDiv = document.getElementById('spModalChapters');
-        chDiv.innerHTML = '';
-        for (let c = 1; c <= 6; c++) {
-            const checked = existing.chapters && existing.chapters.includes(c);
-            const done = subj.chapters[c-1]; // already completed
-            chDiv.innerHTML += `
-                <label style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;
-                    border:1px solid ${done?'#a5d6a7':'#e9e9e7'};border-radius:5px;
-                    background:${done?'#e8f5e9':'#fff'};cursor:pointer;font-size:12px;user-select:none;"
-                >
-                    <input type="checkbox" data-ch="${c}" ${checked?'checked':''} ${done?'disabled':''} style="accent-color:#16a34a;">
-                    Ch ${c} ${done?'✓':''}
-                </label>`;
+        function getMonthName(monthIndex) {
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                          'July', 'August', 'September', 'October', 'November', 'December'];
+            return months[monthIndex];
         }
 
-        document.getElementById('spModalTitle').textContent = `Plan: ${subj.name}`;
-        document.getElementById('spModalSub').textContent   = `Assign chapters for ${periodKey.replace('W',' Week ')}`;
-        document.getElementById('spModalOverlay').classList.add('visible');
-    }
-
-    function closeStudyPlanModal() {
-        document.getElementById('spModalOverlay').classList.remove('visible');
-        spModalContext = {};
-    }
-
-    function saveStudyPlanModal() {
-        const { subjectIndex, periodKey } = spModalContext;
-        const plan = getSubjectPlan(subjectIndex);
-        const store = state.spView === 'monthly' ? plan.months : plan.weeks;
-
-        const chapters = [];
-        document.querySelectorAll('#spModalChapters input[type=checkbox]').forEach(cb => {
-            if (cb.checked) chapters.push(parseInt(cb.dataset.ch));
-        });
-
-        if (!store[periodKey]) store[periodKey] = { chapters:[], hours:'' };
-        store[periodKey].chapters = chapters;
-
-        saveData();
-        closeStudyPlanModal();
-        render();
-    }
-
-    function updateTimeAllocation(subjectIndex, periodKey, value) {
-        const plan = getSubjectPlan(subjectIndex);
-        const store = state.spView === 'monthly' ? plan.months : plan.weeks;
-        if (!store[periodKey]) store[periodKey] = { chapters:[], hours:'' };
-        store[periodKey].hours = value;
-        saveData();
-    }
-
-    // ─── Render: Progress Chart ─────────────────────────────────
-    function renderProgressChart() {
-        const monthData = getCurrentMonthData();
-        const daysInMonth = getDaysInMonth(state.selectedMonth.year, state.selectedMonth.month);
-        const dailyData = [];
-        for (let day=0; day<daysInMonth; day++) {
-            let completed=0, failed=0;
-            monthData.habits.forEach(h => {
-                if (h.days[day]==='completed') completed++;
-                else if (h.days[day]==='failed') failed++;
-            });
-            dailyData.push({completed, failed});
+        function getDayName(date) {
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            return days[date.getDay()];
         }
-        const totalCompleted = dailyData.reduce((s,d)=>s+d.completed,0);
-        const totalFailed    = dailyData.reduce((s,d)=>s+d.failed,0);
 
-        return {
-            html:`<div class="chart-section">
-                <div class="chart-header">
-                    <div class="chart-title">📈 Your Progress Flow</div>
-                    <div class="chart-stats">
-                        <div class="chart-stat"><div class="stat-dot completed"></div><span>${totalCompleted} Completed</span></div>
-                        <div class="chart-stat"><div class="stat-dot failed"></div><span>${totalFailed} Failed</span></div>
-                    </div>
-                </div>
-                <div class="chart-container"><canvas id="progressChart"></canvas></div>
-            </div>`,
-            dailyData
-        };
-    }
+        function initializeMonthData(year, month) {
+            const daysInMonth = getDaysInMonth(year, month);
+            return {
+                year,
+                month,
+                protocols: Array(10).fill(''),
+                habits: Array(12).fill(null).map((_, i) => ({
+                    name: `Habit ${i + 1}`,
+                    days: Array(daysInMonth).fill(null)
+                })),
+                goals: Array(5).fill(null).map(() => ({
+                    title: '',
+                    steps: Array(3).fill(null).map(() => ({ text: '', completed: false }))
+                })),
+                achievements: Array(10).fill(''),
+                notes: ''
+            };
+        }
 
-    function createChart(dailyData) {
-        const ctx = document.getElementById('progressChart');
-        if (!ctx) return;
-        if (progressChart) progressChart.destroy();
-        progressChart = new Chart(ctx, {
-            type:'line',
-            data:{
-                labels: dailyData.map((_,i)=>i+1),
-                datasets:[
-                    { label:'Completed', data:dailyData.map(d=>d.completed), borderColor:'#10b981', backgroundColor:'rgba(16,185,129,0.1)', tension:0.4, fill:true },
-                    { label:'Failed',    data:dailyData.map(d=>d.failed),    borderColor:'#ef4444', backgroundColor:'rgba(239,68,68,0.1)',   tension:0.4, fill:true }
+        function initializeAcademicData() {
+            return {
+                subjects: [
+                    { name: 'Business Math', year: '2nd Year', chapters: Array(6).fill(false), examDate: '2026-09-01' },
+                    { name: 'Business Statistics', year: '3rd Year', chapters: Array(6).fill(false), examDate: '2026-08-31' },
+                    { name: 'Management Accounting', year: '3rd Year', chapters: Array(6).fill(false), examDate: '2026-08-31' },
+                    { name: 'Taxation in Bangladesh', year: '3rd Year', chapters: Array(6).fill(false), examDate: '2026-08-31' },
+                    { name: 'Financial Management', year: '4th Year', chapters: Array(6).fill(false), examDate: '2026-09-30' },
+                    { name: 'Project Management', year: '4th Year', chapters: Array(6).fill(false), examDate: '2026-12-31' },
+                    { name: 'Investment Management', year: '4th Year', chapters: Array(6).fill(false), examDate: '2026-12-31' }
                 ]
-            },
-            options:{
-                responsive:true, maintainAspectRatio:false,
-                plugins:{ legend:{display:false}, tooltip:{mode:'index',intersect:false} },
-                scales:{
-                    y:{ beginAtZero:true, ticks:{stepSize:1}, grid:{color:'#e9e9e7'} },
-                    x:{ grid:{display:false} }
+            };
+        }
+
+        function initializeStudyPlans() {
+            return {};
+        }
+
+        // App State
+        let state = {
+            view: 'monthly',
+            selectedMonth: { year: new Date().getFullYear(), month: new Date().getMonth() },
+            yearData: {},
+            academicData: null,
+            studyPlans: {},
+            spView: 'monthly',
+            spSelectedSubject: 0
+        };
+
+        let progressChart = null;
+        let spModalContext = {};
+
+        // Load data from localStorage
+        function loadData() {
+            const saved = localStorage.getItem('momentumTracker');
+            if (saved) {
+                state.yearData = JSON.parse(saved);
+            } else {
+                const year = new Date().getFullYear();
+                for (let month = 0; month < 12; month++) {
+                    state.yearData[`${year}-${month}`] = initializeMonthData(year, month);
                 }
             }
-        });
-    }
 
-    // ─── Render: Academic Tracker (chapter cards) ───────────────
-    function renderAcademicTracker() {
-        const today = new Date();
-        let html = `<div class="academic-section">
-            <div class="academic-header">
-                <div>
-                    <div class="academic-title">🎓 Academic Progress Tracker</div>
-                    <div class="academic-subtitle">BBA Management • National University • 2021-22 Session</div>
-                </div>
-                <div class="academic-badge">4th Year</div>
-            </div>
-            <div class="subjects-grid">`;
+            const academicSaved = localStorage.getItem('academicTracker');
+            if (academicSaved) {
+                state.academicData = JSON.parse(academicSaved);
+            } else {
+                state.academicData = initializeAcademicData();
+            }
 
-        state.academicData.subjects.forEach((subj, si) => {
-            const completed = subj.chapters.filter(c=>c).length;
-            const progress  = Math.round((completed/6)*100);
-            const examDate  = new Date(subj.examDate);
-            const daysLeft  = Math.ceil((examDate - today)/(86400000));
-            const weeksNeeded = 6 - completed;
-            const deadlineClass = daysLeft<30 ? 'deadline-warning' : 'deadline-good';
+            const spSaved = localStorage.getItem('studyPlans');
+            state.studyPlans = spSaved ? JSON.parse(spSaved) : initializeStudyPlans();
+        }
 
-            html += `<div class="subject-card">
-                <div class="subject-header">
-                    <div class="subject-name">${subj.name}</div>
-                    <div class="year-badge">${subj.year}</div>
-                </div>
-                <div class="subject-progress">
-                    <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
-                    <div class="progress-text"><span>${completed}/6 Chapters</span><span>${progress}%</span></div>
-                </div>
-                <div class="chapters-grid">`;
+        // Save data to localStorage
+        function saveData() {
+            localStorage.setItem('momentumTracker', JSON.stringify(state.yearData));
+            localStorage.setItem('academicTracker', JSON.stringify(state.academicData));
+            localStorage.setItem('studyPlans', JSON.stringify(state.studyPlans));
+        }
 
-            subj.chapters.forEach((done, ci) => {
-                html += `<div class="chapter-box ${done?'completed':''}" onclick="toggleChapter(${si},${ci})">${ci+1}</div>`;
+        // Get current month data
+        function getCurrentMonthData() {
+            const key = `${state.selectedMonth.year}-${state.selectedMonth.month}`;
+            if (!state.yearData[key]) {
+                state.yearData[key] = initializeMonthData(state.selectedMonth.year, state.selectedMonth.month);
+            }
+            return state.yearData[key];
+        }
+
+        // Update month data
+        function updateMonthData(updates) {
+            const key = `${state.selectedMonth.year}-${state.selectedMonth.month}`;
+            state.yearData[key] = { ...getCurrentMonthData(), ...updates };
+            saveData();
+            render();
+        }
+
+        // Change view
+        function changeView(newView) {
+            state.view = newView;
+            render();
+        }
+
+        // Change month
+        function changeMonth(direction) {
+            let newMonth = state.selectedMonth.month + direction;
+            let newYear = state.selectedMonth.year;
+            
+            if (newMonth > 11) {
+                newMonth = 0;
+                newYear++;
+            } else if (newMonth < 0) {
+                newMonth = 11;
+                newYear--;
+            }
+            
+            state.selectedMonth = { year: newYear, month: newMonth };
+            render();
+        }
+
+        // Select specific month
+        function selectMonth(year, month) {
+            state.selectedMonth = { year, month };
+            state.view = 'monthly';
+            render();
+        }
+
+        // Toggle chapter completion
+        function toggleChapter(subjectIndex, chapterIndex) {
+            state.academicData.subjects[subjectIndex].chapters[chapterIndex] = 
+                !state.academicData.subjects[subjectIndex].chapters[chapterIndex];
+            saveData();
+            render();
+        }
+
+        // ─── Study Plan Helpers ─────────────────────────────────────
+        function getSubjectPlan(si) {
+            if (!state.studyPlans[si]) state.studyPlans[si] = { months:{}, weeks:{} };
+            return state.studyPlans[si];
+        }
+
+        function getISOWeek(date) {
+            const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+            const dayNum = d.getUTCDay() || 7;
+            d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+            const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+            return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+        }
+
+        function getWeeksForMonth(year, month) {
+            const days = getDaysInMonth(year, month);
+            const weeks = [];
+            const seen = new Set();
+            for (let d = 1; d <= days; d++) {
+                const date = new Date(year, month, d);
+                const wk = getISOWeek(date);
+                const key = `${year}-W${wk}`;
+                if (!seen.has(key)) { seen.add(key); weeks.push({ key, week: wk, year }); }
+            }
+            return weeks;
+        }
+
+        function openStudyPlanModal(subjectIndex, periodKey) {
+            spModalContext = { subjectIndex, periodKey };
+            const subj = state.academicData.subjects[subjectIndex];
+            const plan = getSubjectPlan(subjectIndex);
+            const existing = (state.spView === 'monthly'
+                ? (plan.months[periodKey] || {})
+                : (plan.weeks[periodKey] || {}));
+
+            const sSelect = document.getElementById('spModalSubject');
+            sSelect.innerHTML = state.academicData.subjects.map((s,i) =>
+                `<option value="${i}" ${i===subjectIndex?'selected':''}>${s.name}</option>`
+            ).join('');
+            sSelect.disabled = true;
+
+            const pSelect = document.getElementById('spModalPeriod');
+            pSelect.innerHTML = `<option value="${periodKey}" selected>${periodKey.replace('W',' W')}</option>`;
+            pSelect.disabled = true;
+
+            const chDiv = document.getElementById('spModalChapters');
+            chDiv.innerHTML = '';
+            for (let c = 1; c <= 6; c++) {
+                const checked = existing.chapters && existing.chapters.includes(c);
+                const done = subj.chapters[c-1];
+                chDiv.innerHTML += `
+                    <label style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;
+                        border:1px solid ${done?'#a5d6a7':'#e9e9e7'};border-radius:5px;
+                        background:${done?'#e8f5e9':'#fff'};cursor:pointer;font-size:12px;user-select:none;"
+                    >
+                        <input type="checkbox" data-ch="${c}" ${checked?'checked':''} ${done?'disabled':''} style="accent-color:#16a34a;">
+                        Ch ${c} ${done?'✓':''}
+                    </label>`;
+            }
+
+            document.getElementById('spModalTitle').textContent = `Plan: ${subj.name}`;
+            document.getElementById('spModalSub').textContent = `Assign chapters for ${periodKey.replace('W',' Week ')}`;
+            document.getElementById('spModalOverlay').classList.add('visible');
+        }
+
+        function closeStudyPlanModal() {
+            document.getElementById('spModalOverlay').classList.remove('visible');
+            spModalContext = {};
+        }
+
+        function saveStudyPlanModal() {
+            const { subjectIndex, periodKey } = spModalContext;
+            const plan = getSubjectPlan(subjectIndex);
+            const store = state.spView === 'monthly' ? plan.months : plan.weeks;
+
+            const chapters = [];
+            document.querySelectorAll('#spModalChapters input[type=checkbox]').forEach(cb => {
+                if (cb.checked) chapters.push(parseInt(cb.dataset.ch));
             });
 
-            html += `</div>
-                <div class="subject-meta">
-                    <div class="meta-item"><div class="meta-label">Exam Date</div><div class="meta-value">${examDate.toLocaleDateString('en-US',{month:'short',day:'numeric'})}</div></div>
-                    <div class="meta-item"><div class="meta-label">Days Left</div><div class="meta-value ${deadlineClass}">${daysLeft}d</div></div>
-                    <div class="meta-item"><div class="meta-label">Weeks Needed</div><div class="meta-value">${weeksNeeded}w</div></div>
-                </div>
-            </div>`;
-        });
+            if (!store[periodKey]) store[periodKey] = { chapters:[], hours:'' };
+            store[periodKey].chapters = chapters;
 
-        html += '</div></div>';
-        return html;
-    }
+            saveData();
+            closeStudyPlanModal();
+            render();
+        }
 
-    // ─── Render: Study Plan Section ─────────────────────────────
-    function renderStudyPlan() {
-        const si = state.spSelectedSubject;
-        const subj = state.academicData.subjects[si];
-        const plan = getSubjectPlan(si);
-        const year = new Date().getFullYear();
+        function updateTimeAllocation(subjectIndex, periodKey, value) {
+            const plan = getSubjectPlan(subjectIndex);
+            const store = state.spView === 'monthly' ? plan.months : plan.weeks;
+            if (!store[periodKey]) store[periodKey] = { chapters:[], hours:'' };
+            store[periodKey].hours = value;
+            saveData();
+        }
 
-        // ── Subject pills ──
-        let pillsHtml = '';
-        state.academicData.subjects.forEach((s, i) => {
-            pillsHtml += `<button class="sp-subject-pill ${i===si?'active':''}"
-                onclick="state.spSelectedSubject=${i};render();">${s.name}</button>`;
-        });
-
-        // ── Tab buttons ──
-        const tabs = `<div class="study-plan-tabs">
-            <button class="sp-study-plan-tab ${state.spView==='monthly'?'active':''}"
-                onclick="state.spView='monthly';render();">Monthly</button>
-            <button class="sp-study-plan-tab ${state.spView==='weekly'?'active':''}"
-                onclick="state.spView='weekly';render();">Weekly</button>
-        </div>`;
-
-        // ── Build period columns ──
-        let periods = [];
-        if (state.spView === 'monthly') {
-            // Feb 2026 – Dec 2026
-            for (let m = 1; m < 12; m++) {
-                periods.push({ key:`${year}-${String(m+1).padStart(2,'0')}`, label: getMonthShort(m) });
-            }
-        } else {
-            // Weeks overlapping current month (and surrounding)
-            // Show weeks from Feb through Dec
-            const allWeeks = new Map();
-            for (let m = 1; m < 12; m++) {
-                getWeeksForMonth(year, m).forEach(w => {
-                    if (!allWeeks.has(w.key)) allWeeks.set(w.key, w);
+        // Render Progress Chart
+        function renderProgressChart() {
+            const monthData = getCurrentMonthData();
+            const daysInMonth = getDaysInMonth(state.selectedMonth.year, state.selectedMonth.month);
+            
+            // Calculate daily completion rates
+            const dailyData = [];
+            for (let day = 0; day < daysInMonth; day++) {
+                let completed = 0;
+                let failed = 0;
+                let total = 0;
+                
+                monthData.habits.forEach(habit => {
+                    if (habit.days[day] === 'completed') {
+                        completed++;
+                        total++;
+                    } else if (habit.days[day] === 'failed') {
+                        failed++;
+                        total++;
+                    }
                 });
+                
+                dailyData.push({ completed, failed, total });
             }
-            allWeeks.forEach(w => {
-                periods.push({ key: w.key, label: `W${w.week}` });
+
+            const totalCompleted = dailyData.reduce((sum, d) => sum + d.completed, 0);
+            const totalFailed = dailyData.reduce((sum, d) => sum + d.failed, 0);
+
+            let html = `
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <div class="chart-title">📈 Your Progress Flow</div>
+                        <div class="chart-stats">
+                            <div class="chart-stat">
+                                <div class="stat-dot completed"></div>
+                                <span>${totalCompleted} Completed</span>
+                            </div>
+                            <div class="chart-stat">
+                                <div class="stat-dot failed"></div>
+                                <span>${totalFailed} Failed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+            `;
+
+            return { html, dailyData };
+        }
+
+        function createChart(dailyData) {
+            const ctx = document.getElementById('progressChart');
+            if (!ctx) return;
+
+            if (progressChart) {
+                progressChart.destroy();
+            }
+
+            const labels = dailyData.map((_, i) => i + 1);
+            const completedData = dailyData.map(d => d.completed);
+            const failedData = dailyData.map(d => d.failed);
+
+            progressChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Completed',
+                            data: completedData,
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'Failed',
+                            data: failedData,
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            },
+                            grid: {
+                                color: '#e9e9e7'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
             });
         }
 
-        // ── Table header ──
-        let theadHtml = '<tr><th style="min-width:150px;position:sticky;left:0;z-index:2;background:#f7f6f3;">Chapter</th>';
-        periods.forEach(p => { theadHtml += `<th class="sp-month-head">${p.label}</th>`; });
-        theadHtml += '</tr>';
+        // Render Academic Tracker
+        function renderAcademicTracker() {
+            const today = new Date();
+            
+            let html = `
+                <div class="academic-section">
+                    <div class="academic-header">
+                        <div>
+                            <div class="academic-title">🎓 Academic Progress Tracker</div>
+                            <div class="academic-subtitle">BBA Management • National University • 2021-22 Session</div>
+                        </div>
+                        <div class="academic-badge">4th Year</div>
+                    </div>
+                    <div class="subjects-grid">
+            `;
 
-        // ── Chapter rows ──
-        let tbodyHtml = '';
-        for (let ch = 1; ch <= 6; ch++) {
-            const chDone = subj.chapters[ch-1];
-            tbodyHtml += `<tr>
-                <td class="sp-row-label" style="${chDone?'color:#9b9a97;text-decoration:line-through;':''}"
-                >Chapter ${ch} ${chDone?'<span style="color:#16a34a;font-size:11px;">(done)</span>':''}</td>`;
+            state.academicData.subjects.forEach((subject, subjectIndex) => {
+                const completed = subject.chapters.filter(c => c).length;
+                const progress = Math.round((completed / 6) * 100);
+                const examDate = new Date(subject.examDate);
+                const daysLeft = Math.ceil((examDate - today) / (1000 * 60 * 60 * 24));
+                const weeksNeeded = Math.ceil((6 - completed));
+                
+                html += `
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <div class="subject-name">${subject.name}</div>
+                            <div class="year-badge">${subject.year}</div>
+                        </div>
+                        <div class="subject-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${progress}%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>${completed}/6 Chapters</span>
+                                <span>${progress}%</span>
+                            </div>
+                        </div>
+                        <div class="chapters-grid">
+                `;
 
+                subject.chapters.forEach((isCompleted, chapterIndex) => {
+                    html += `
+                        <div class="chapter-box ${isCompleted ? 'completed' : ''}" 
+                             onclick="toggleChapter(${subjectIndex}, ${chapterIndex})">
+                            ${chapterIndex + 1}
+                        </div>
+                    `;
+                });
+
+                const deadlineClass = daysLeft < 30 ? 'deadline-warning' : 'deadline-good';
+
+                html += `
+                        </div>
+                        <div class="subject-meta">
+                            <div class="meta-item">
+                                <div class="meta-label">Exam Date</div>
+                                <div class="meta-value">${examDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Days Left</div>
+                                <div class="meta-value ${deadlineClass}">${daysLeft}d</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Weeks Needed</div>
+                                <div class="meta-value">${weeksNeeded}w</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div></div>';
+            return html;
+        }
+
+        // ─── Render: Study Plan Section ─────────────────────────────
+        function renderStudyPlan() {
+            const si = state.spSelectedSubject;
+            const subj = state.academicData.subjects[si];
+            const plan = getSubjectPlan(si);
+            const year = new Date().getFullYear();
+
+            let pillsHtml = '';
+            state.academicData.subjects.forEach((s, i) => {
+                pillsHtml += `<button class="sp-subject-pill ${i===si?'active':''}"
+                    onclick="state.spSelectedSubject=${i};render();">${s.name}</button>`;
+            });
+
+            const tabs = `<div class="study-plan-tabs">
+                <button class="study-plan-tab ${state.spView==='monthly'?'active':''}"
+                    onclick="state.spView='monthly';render();">Monthly</button>
+                <button class="study-plan-tab ${state.spView==='weekly'?'active':''}"
+                    onclick="state.spView='weekly';render();">Weekly</button>
+            </div>`;
+
+            let periods = [];
+            if (state.spView === 'monthly') {
+                for (let m = 1; m < 12; m++) {
+                    periods.push({ key:`${year}-${String(m+1).padStart(2,'0')}`, label: getMonthName(m).substring(0, 3) });
+                }
+            } else {
+                const allWeeks = new Map();
+                for (let m = 1; m < 12; m++) {
+                    getWeeksForMonth(year, m).forEach(w => {
+                        if (!allWeeks.has(w.key)) allWeeks.set(w.key, w);
+                    });
+                }
+                allWeeks.forEach(w => {
+                    periods.push({ key: w.key, label: `W${w.week}` });
+                });
+            }
+
+            let theadHtml = '<tr><th style="min-width:150px;position:sticky;left:0;z-index:2;background:#f7f6f3;">Chapter</th>';
+            periods.forEach(p => { theadHtml += `<th class="sp-month-head">${p.label}</th>`; });
+            theadHtml += '</tr>';
+
+            let tbodyHtml = '';
+            for (let ch = 1; ch <= 6; ch++) {
+                const chDone = subj.chapters[ch-1];
+                tbodyHtml += `<tr>
+                    <td class="sp-row-label" style="${chDone?'color:#9b9a97;text-decoration:line-through;':''}"
+                    >Chapter ${ch} ${chDone?'<span style="color:#16a34a;font-size:11px;">(done)</span>':''}</td>`;
+
+                periods.forEach(p => {
+                    const store = state.spView==='monthly' ? plan.months : plan.weeks;
+                    const entry = store[p.key] || {};
+                    const assigned = entry.chapters && entry.chapters.includes(ch);
+
+                    if (assigned) {
+                        tbodyHtml += `<td class="sp-cell" style="cursor:pointer;background:#e8f5e9;" onclick="openStudyPlanModal(${si},'${p.key}')">
+                            <span class="sp-chapter-pill ${chDone?'done':''}">Ch ${ch}</span>
+                        </td>`;
+                    } else {
+                        tbodyHtml += `<td class="sp-cell" style="cursor:pointer;" onclick="openStudyPlanModal(${si},'${p.key}')">
+                            <span style="color:#ccc;font-size:14px;">+</span>
+                        </td>`;
+                    }
+                });
+                tbodyHtml += '</tr>';
+            }
+
+            tbodyHtml += `<tr class="sp-time-row">
+                <td class="sp-row-label" style="background:#fefce8;font-weight:600;color:#854d0e;">⏱ Hours/week</td>`;
             periods.forEach(p => {
                 const store = state.spView==='monthly' ? plan.months : plan.weeks;
                 const entry = store[p.key] || {};
-                const assigned = entry.chapters && entry.chapters.includes(ch);
-
-                if (assigned) {
-                    tbodyHtml += `<td class="sp-cell" style="cursor:pointer;background:#e8f5e9;" onclick="openStudyPlanModal(${si},'${p.key}')">
-                        <span class="sp-chapter-pill ${chDone?'done':''}">Ch ${ch}</span>
-                    </td>`;
-                } else {
-                    tbodyHtml += `<td class="sp-cell" style="cursor:pointer;" onclick="openStudyPlanModal(${si},'${p.key}')">
-                        <span style="color:#ccc;font-size:14px;">+</span>
-                    </td>`;
-                }
+                tbodyHtml += `<td class="sp-cell" style="background:#fefce8;">
+                    <input type="number" class="sp-time-input" placeholder="0"
+                        value="${entry.hours||''}"
+                        onchange="updateTimeAllocation(${si},'${p.key}',this.value)"
+                        onblur="updateTimeAllocation(${si},'${p.key}',this.value)">
+                    <div class="sp-time-label">${state.spView==='monthly'?'hrs/week':'hrs/wk'}</div>
+                </td>`;
             });
             tbodyHtml += '</tr>';
+
+            const totalPlanned = (() => {
+                const allCh = new Set();
+                const store = state.spView==='monthly' ? plan.months : plan.weeks;
+                Object.values(store).forEach(e => (e.chapters||[]).forEach(c => allCh.add(c)));
+                return allCh.size;
+            })();
+            const totalDone = subj.chapters.filter(c=>c).length;
+            const totalHours = (() => {
+                const store = state.spView==='monthly' ? plan.months : plan.weeks;
+                return Object.values(store).reduce((s,e) => s + (parseFloat(e.hours)||0), 0);
+            })();
+            const unplanned = 6 - totalPlanned;
+
+            let summaryHtml = `<div class="sp-summary-bar">
+                <div class="sp-summary-card">
+                    <div class="sp-summary-icon green">📅</div>
+                    <div class="sp-summary-text"><div class="sp-sum-val">${totalPlanned}</div><div class="sp-sum-label">Chapters Planned</div></div>
+                </div>
+                <div class="sp-summary-card">
+                    <div class="sp-summary-icon blue">✅</div>
+                    <div class="sp-summary-text"><div class="sp-sum-val">${totalDone}</div><div class="sp-sum-label">Chapters Done</div></div>
+                </div>
+                <div class="sp-summary-card">
+                    <div class="sp-summary-icon amber">⏱</div>
+                    <div class="sp-summary-text"><div class="sp-sum-val">${totalHours}h</div><div class="sp-sum-label">Total Hours Set</div></div>
+                </div>
+                <div class="sp-summary-card">
+                    <div class="sp-summary-icon ${unplanned>0?'red':'green'}">📖</div>
+                    <div class="sp-summary-text"><div class="sp-sum-val">${unplanned}</div><div class="sp-sum-label">Unplanned</div></div>
+                </div>
+            </div>`;
+
+            return `<div class="study-plan-section">
+                <div class="study-plan-header">
+                    <div class="study-plan-header-left">
+                        <h2>📝 Study Plan</h2>
+                        <p>Set targets — assign chapters to specific weeks or months & allocate study hours</p>
+                    </div>
+                    ${tabs}
+                </div>
+                <div class="sp-subject-selector">${pillsHtml}</div>
+                <div class="sp-plan-wrapper">
+                    <table class="sp-plan-table">
+                        <thead>${theadHtml}</thead>
+                        <tbody>${tbodyHtml}</tbody>
+                    </table>
+                </div>
+                ${summaryHtml}
+            </div>`;
         }
 
-        // ── Time allocation row ──
-        tbodyHtml += `<tr class="sp-time-row">
-            <td class="sp-row-label" style="background:#fefce8;font-weight:600;color:#854d0e;">⏱ Hours/week</td>`;
-        periods.forEach(p => {
-            const store = state.spView==='monthly' ? plan.months : plan.weeks;
-            const entry = store[p.key] || {};
-            tbodyHtml += `<td class="sp-cell" style="background:#fefce8;">
-                <input type="number" class="sp-time-input" placeholder="0"
-                    value="${entry.hours||''}"
-                    onchange="updateTimeAllocation(${si},'${p.key}',this.value)"
-                    onblur="updateTimeAllocation(${si},'${p.key}',this.value)">
-                <div class="sp-time-label">${state.spView==='monthly'?'hrs/week':'hrs/wk'}</div>
-            </td>`;
-        });
-        tbodyHtml += '</tr>';
+        // Render Sidebar
+        function renderSidebar() {
+            const navItems = [
+                { id: 'monthly', icon: '📅', label: 'Monthly Tracker' },
+                { id: 'academics', icon: '🎓', label: 'Academic Tracker' },
+                { id: 'weekly', icon: '📊', label: 'Weekly Analysis' },
+                { id: 'yearly', icon: '📈', label: 'Yearly Overview' }
+            ];
 
-        // ── Summary cards ──
-        const totalPlanned = (() => {
-            const allCh = new Set();
-            const store = state.spView==='monthly' ? plan.months : plan.weeks;
-            Object.values(store).forEach(e => (e.chapters||[]).forEach(c => allCh.add(c)));
-            return allCh.size;
-        })();
-        const totalDone = subj.chapters.filter(c=>c).length;
-        const totalHours = (() => {
-            const store = state.spView==='monthly' ? plan.months : plan.weeks;
-            return Object.values(store).reduce((s,e) => s + (parseFloat(e.hours)||0), 0);
-        })();
-        const unplanned = 6 - totalPlanned;
-
-        let summaryHtml = `<div class="sp-summary-bar">
-            <div class="sp-summary-card">
-                <div class="sp-summary-icon green">📅</div>
-                <div class="sp-summary-text"><div class="sp-sum-val">${totalPlanned}</div><div class="sp-sum-label">Chapters Planned</div></div>
-            </div>
-            <div class="sp-summary-card">
-                <div class="sp-summary-icon blue">✅</div>
-                <div class="sp-summary-text"><div class="sp-sum-val">${totalDone}</div><div class="sp-sum-label">Chapters Done</div></div>
-            </div>
-            <div class="sp-summary-card">
-                <div class="sp-summary-icon amber">⏱</div>
-                <div class="sp-summary-text"><div class="sp-sum-val">${totalHours}h</div><div class="sp-sum-label">Total Hours Set</div></div>
-            </div>
-            <div class="sp-summary-card">
-                <div class="sp-summary-icon ${unplanned>0?'red':'green'}">📖</div>
-                <div class="sp-summary-text"><div class="sp-sum-val">${unplanned}</div><div class="sp-sum-label">Unplanned</div></div>
-            </div>
-        </div>`;
-
-        return `<div class="study-plan-section">
-            <div class="study-plan-header">
-                <div class="study-plan-header-left">
-                    <h2>📝 Study Plan</h2>
-                    <p>Set targets — assign chapters to specific weeks or months & allocate study hours</p>
-                </div>
-                ${tabs}
-            </div>
-            <div class="sp-subject-selector">${pillsHtml}</div>
-            <div class="sp-plan-wrapper">
-                <table class="sp-plan-table">
-                    <thead>${theadHtml}</thead>
-                    <tbody>${tbodyHtml}</tbody>
-                </table>
-            </div>
-            ${summaryHtml}
-        </div>`;
-    }
-
-    // ─── Render: Sidebar ────────────────────────────────────────
-    function renderSidebar() {
-        const navItems = [
-            { id:'monthly',   icon:'📅', label:'Monthly Tracker' },
-            { id:'academics', icon:'🎓', label:'Academic Tracker' },
-            { id:'weekly',    icon:'📊', label:'Weekly Analysis' },
-            { id:'yearly',    icon:'📈', label:'Yearly Overview' }
-        ];
-        document.getElementById('sidebarNav').innerHTML = navItems.map(item =>
-            `<div class="nav-item ${state.view===item.id?'active':''}" onclick="changeView('${item.id}')">
-                <span class="nav-icon">${item.icon}</span>${item.label}</div>`
-        ).join('');
-
-        document.getElementById('monthSelector').innerHTML = state.view==='monthly' ? `
-            <div class="month-selector-title">Navigate</div>
-            <div class="month-controls">
-                <button onclick="changeMonth(-1)">←</button>
-                <span class="month-name">${getMonthName(state.selectedMonth.month)} ${state.selectedMonth.year}</span>
-                <button onclick="changeMonth(1)">→</button>
-            </div>` : '';
-
-        document.getElementById('mobileNav').innerHTML = navItems.map(item =>
-            `<button class="mobile-nav-item ${state.view===item.id?'active':''}" onclick="changeView('${item.id}')">${item.icon}</button>`
-        ).join('');
-    }
-
-    // ─── Render: Monthly View ───────────────────────────────────
-    function renderMonthly() {
-        const monthData = getCurrentMonthData();
-        const daysInMonth = getDaysInMonth(state.selectedMonth.year, state.selectedMonth.month);
-        const today = new Date();
-        const isCurrentMonth = state.selectedMonth.year===today.getFullYear() && state.selectedMonth.month===today.getMonth();
-
-        let html = `<div class="page-header">
-            <h1 class="page-title">${getMonthName(state.selectedMonth.month)} ${state.selectedMonth.year}</h1>
-            <div class="page-subtitle">${daysInMonth} days to build momentum</div>
-            ${isCurrentMonth?`<div class="today-badge">Today: ${getDayName(today)}, ${getMonthName(today.getMonth())} ${today.getDate()}</div>`:''}
-        </div>`;
-
-        const chartData = renderProgressChart();
-        html += chartData.html;
-        html += renderAcademicTracker();
-        html += renderStudyPlan();
-
-        // Two column
-        html += '<div class="two-column"><div>';
-
-        // Protocols
-        html += `<div class="section"><div class="section-header"><span class="section-icon">📋</span><h2 class="section-title">Daily Protocols</h2></div><div class="protocols-list">`;
-        monthData.protocols.forEach((p,i) => {
-            html += `<div class="protocol-item"><div class="protocol-number">${i+1}.</div>
-                <input type="text" class="protocol-input" value="${p}" onchange="updateProtocol(${i},this.value)" placeholder="What must you do every day?"></div>`;
-        });
-        html += '</div></div></div>';
-
-        // Right column
-        html += '<div>';
-
-        // Goals
-        html += `<div class="section"><div class="section-header"><span class="section-icon">🎯</span><h2 class="section-title">Major Goals</h2></div><div class="goals-list">`;
-        monthData.goals.forEach((goal, gi) => {
-            html += `<div class="goal-item"><div class="goal-header">
-                <div class="goal-number">${gi+1}</div>
-                <input type="text" class="goal-input" value="${goal.title}" onchange="updateGoal(${gi},this.value)" placeholder="What do you want to achieve?">
-            </div><div class="goal-steps">`;
-            goal.steps.forEach((step, si2) => {
-                html += `<div class="goal-step">
-                    <div class="step-checkbox ${step.completed?'checked':''}" onclick="toggleStep(${gi},${si2})">${step.completed?'✓':''}</div>
-                    <input type="text" class="step-input" value="${step.text}" onchange="updateStep(${gi},${si2},this.value)" placeholder="Action step...">
-                </div>`;
+            let navHtml = '';
+            navItems.forEach(item => {
+                navHtml += `
+                    <div class="nav-item ${state.view === item.id ? 'active' : ''}" 
+                         onclick="changeView('${item.id}')">
+                        <span class="nav-icon">${item.icon}</span>
+                        ${item.label}
+                    </div>
+                `;
             });
+            document.getElementById('sidebarNav').innerHTML = navHtml;
+
+            // Month selector
+            if (state.view === 'monthly') {
+                document.getElementById('monthSelector').innerHTML = `
+                    <div class="month-selector-title">Navigate</div>
+                    <div class="month-controls">
+                        <button onclick="changeMonth(-1)">←</button>
+                        <span class="month-name">
+                            ${getMonthName(state.selectedMonth.month)} ${state.selectedMonth.year}
+                        </span>
+                        <button onclick="changeMonth(1)">→</button>
+                    </div>
+                `;
+            } else {
+                document.getElementById('monthSelector').innerHTML = '';
+            }
+
+            // Mobile nav
+            let mobileNavHtml = '';
+            navItems.forEach(item => {
+                mobileNavHtml += `
+                    <button class="mobile-nav-item ${state.view === item.id ? 'active' : ''}" 
+                            onclick="changeView('${item.id}')">
+                        ${item.icon}
+                    </button>
+                `;
+            });
+            document.getElementById('mobileNav').innerHTML = mobileNavHtml;
+        }
+
+        // Render Monthly View
+        function renderMonthly() {
+            const monthData = getCurrentMonthData();
+            const daysInMonth = getDaysInMonth(state.selectedMonth.year, state.selectedMonth.month);
+            const today = new Date();
+            const isCurrentMonth = state.selectedMonth.year === today.getFullYear() && 
+                                   state.selectedMonth.month === today.getMonth();
+            
+            let html = `
+                <div class="page-header">
+                    <h1 class="page-title">${getMonthName(state.selectedMonth.month)} ${state.selectedMonth.year}</h1>
+                    <div class="page-subtitle">${daysInMonth} days to build momentum</div>
+                    ${isCurrentMonth ? `<div class="today-badge">Today: ${getDayName(today)}, ${getMonthName(today.getMonth())} ${today.getDate()}</div>` : ''}
+                </div>
+            `;
+
+            // Progress Chart
+            const chartData = renderProgressChart();
+            html += chartData.html;
+
+            // Academic Tracker
+            html += renderAcademicTracker();
+
+            // Study Plan
+            html += renderStudyPlan();
+
+            // Two column layout
+            html += '<div class="two-column">';
+            
+            // Left column
+            html += '<div>';
+            
+            // Protocols
+            html += `
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">📋</span>
+                        <h2 class="section-title">Daily Protocols</h2>
+                    </div>
+                    <div class="protocols-list">
+            `;
+            
+            monthData.protocols.forEach((protocol, i) => {
+                html += `
+                    <div class="protocol-item">
+                        <div class="protocol-number">${i + 1}.</div>
+                        <input 
+                            type="text" 
+                            class="protocol-input" 
+                            value="${protocol}" 
+                            onchange="updateProtocol(${i}, this.value)"
+                            placeholder="What must you do every day?"
+                        />
+                    </div>
+                `;
+            });
+            
             html += '</div></div>';
-        });
-        html += '</div></div>';
+            html += '</div>'; // End left column
 
-        // Achievements
-        html += `<div class="section"><div class="section-header"><span class="section-icon">🏆</span><h2 class="section-title">Achievements</h2></div><div class="achievements-list">`;
-        monthData.achievements.forEach((a,i) => {
-            html += `<div class="achievement-item"><div class="achievement-bullet">•</div>
-                <input type="text" class="achievement-input" value="${a}" onchange="updateAchievement(${i},this.value)" placeholder="What did you accomplish?"></div>`;
-        });
-        html += '</div></div>';
-
-        // Notes
-        html += `<div class="section"><div class="section-header"><span class="section-icon">📝</span><h2 class="section-title">Notes & Reflections</h2></div>
-            <textarea class="notes-textarea" onchange="updateNotes(this.value)" placeholder="Reflect on your month...">${monthData.notes}</textarea></div>`;
-
-        html += '</div></div>'; // end two-column
-
-        // Habit Tracker
-        html += `<div class="section"><div class="section-header"><span class="section-icon">✅</span><h2 class="section-title">Habit Tracker</h2></div>
-            <div class="habit-table-container"><div class="habit-table-scroll"><table class="habit-table"><thead><tr><th>Habit</th>`;
-        for (let d=1; d<=daysInMonth; d++) {
-            const date = new Date(state.selectedMonth.year, state.selectedMonth.month, d);
-            const isTodayClass = (isCurrentMonth && d===today.getDate()) ? 'today' : '';
-            html += `<th class="${isTodayClass}"><div>${d}</div><div>${getDayName(date)}</div></th>`;
-        }
-        html += '<th>%</th></tr></thead><tbody>';
-
-        monthData.habits.forEach((habit, hi) => {
-            const tracked   = habit.days.filter(d=>d!==null).length;
-            const completed = habit.days.filter(d=>d==='completed').length;
-            const rate      = tracked>0 ? Math.round((completed/tracked)*100) : 0;
-            html += `<tr><td class="habit-name-cell"><input type="text" class="habit-name-input" value="${habit.name}" onchange="updateHabitName(${hi},this.value)"></td>`;
-            habit.days.forEach((status, di) => {
-                const symbol = status==='completed'?'✓':(status==='failed'?'✗':'');
-                html += `<td><div class="habit-cell ${status||''}" onclick="toggleHabitDay(${hi},${di})">${symbol}</div></td>`;
-            });
-            html += `<td class="success-rate">${rate}%</td></tr>`;
-        });
-        html += '</tbody></table></div></div></div>';
-
-        return { html, chartData: chartData.dailyData };
-    }
-
-    // ─── Render: Academics View ─────────────────────────────────
-    function renderAcademics() {
-        let html = `<div class="page-header">
-            <h1 class="page-title">Academic Progress</h1>
-            <div class="page-subtitle">BBA Management • National University • Track your study goals</div>
-        </div>`;
-        html += renderAcademicTracker();
-        html += renderStudyPlan();
-
-        const totalCh = state.academicData.subjects.length * 6;
-        const doneCh  = state.academicData.subjects.reduce((s,sub) => s + sub.chapters.filter(c=>c).length, 0);
-        const overall = Math.round((doneCh/totalCh)*100);
-        const subjDone = state.academicData.subjects.filter(s=>s.chapters.every(c=>c)).length;
-
-        html += `<div class="section" style="margin-top:32px;">
-            <div class="section-header"><span class="section-icon">📊</span><h2 class="section-title">Overall Statistics</h2></div>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="stat-value">${overall}%</div><div class="stat-label">Overall Progress</div></div>
-                <div class="stat-card"><div class="stat-value">${doneCh}</div><div class="stat-label">Chapters Done</div></div>
-                <div class="stat-card"><div class="stat-value">${totalCh-doneCh}</div><div class="stat-label">Chapters Left</div></div>
-                <div class="stat-card"><div class="stat-value">${subjDone}</div><div class="stat-label">Subjects Done</div></div>
-            </div>
-        </div>`;
-        return html;
-    }
-
-    // ─── Render: Weekly View ────────────────────────────────────
-    function renderWeekly() {
-        const monthData = getCurrentMonthData();
-        const daysInMonth = getDaysInMonth(state.selectedMonth.year, state.selectedMonth.month);
-        let weeks = [], cur = [];
-        for (let d=1; d<=daysInMonth; d++) {
-            const date = new Date(state.selectedMonth.year, state.selectedMonth.month, d);
-            cur.push({day:d, dow:date.getDay()});
-            if (date.getDay()===6 || d===daysInMonth) { weeks.push([...cur]); cur=[]; }
-        }
-
-        let html = `<div class="page-header">
-            <h1 class="page-title">Weekly Breakdown</h1>
-            <div class="page-subtitle">${getMonthName(state.selectedMonth.month)} ${state.selectedMonth.year} • ${weeks.length} weeks</div>
-        </div>`;
-
-        weeks.forEach((week, wi) => {
-            let tc=0, tf=0, tt=0;
-            monthData.habits.forEach(h => {
-                week.forEach(({day}) => {
-                    const s = h.days[day-1];
-                    if (s==='completed') tc++;
-                    else if (s==='failed') tf++;
-                    if (s!==null) tt++;
+            // Right column
+            html += '<div>';
+            
+            // Goals
+            html += `
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">🎯</span>
+                        <h2 class="section-title">Major Goals</h2>
+                    </div>
+                    <div class="goals-list">
+            `;
+            
+            monthData.goals.forEach((goal, goalIndex) => {
+                html += `
+                    <div class="goal-item">
+                        <div class="goal-header">
+                            <div class="goal-number">${goalIndex + 1}</div>
+                            <input 
+                                type="text" 
+                                class="goal-input" 
+                                value="${goal.title}"
+                                onchange="updateGoal(${goalIndex}, this.value)"
+                                placeholder="What do you want to achieve?"
+                            />
+                        </div>
+                        <div class="goal-steps">
+                `;
+                
+                goal.steps.forEach((step, stepIndex) => {
+                    html += `
+                        <div class="goal-step">
+                            <div class="step-checkbox ${step.completed ? 'checked' : ''}" 
+                                 onclick="toggleStep(${goalIndex}, ${stepIndex})">
+                                ${step.completed ? '✓' : ''}
+                            </div>
+                            <input 
+                                type="text" 
+                                class="step-input" 
+                                value="${step.text}"
+                                onchange="updateStep(${goalIndex}, ${stepIndex}, this.value)"
+                                placeholder="Action step..."
+                            />
+                        </div>
+                    `;
                 });
+                
+                html += '</div></div>';
             });
-            const rate = tt>0 ? Math.round((tc/tt)*100) : 0;
-            html += `<div class="week-card">
-                <div class="week-header">
-                    <div class="week-title">Week ${wi+1}</div>
-                    <div class="week-dates">${getMonthName(state.selectedMonth.month)} ${week[0].day}-${week[week.length-1].day}</div>
+            
+            html += '</div></div>';
+            
+            // Achievements
+            html += `
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">🏆</span>
+                        <h2 class="section-title">Achievements</h2>
+                    </div>
+                    <div class="achievements-list">
+            `;
+            
+            monthData.achievements.forEach((achievement, i) => {
+                html += `
+                    <div class="achievement-item">
+                        <div class="achievement-bullet">•</div>
+                        <input 
+                            type="text" 
+                            class="achievement-input" 
+                            value="${achievement}"
+                            onchange="updateAchievement(${i}, this.value)"
+                            placeholder="What did you accomplish?"
+                        />
+                    </div>
+                `;
+            });
+            
+            html += '</div></div>';
+            
+            // Notes
+            html += `
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">📝</span>
+                        <h2 class="section-title">Notes & Reflections</h2>
+                    </div>
+                    <textarea 
+                        class="notes-textarea"
+                        onchange="updateNotes(this.value)"
+                        placeholder="Reflect on your month..."
+                    >${monthData.notes}</textarea>
                 </div>
-                <div class="week-stats">
-                    <div class="week-stat"><div class="week-stat-value">${rate}%</div><div class="week-stat-label">Success Rate</div></div>
-                    <div class="week-stat"><div class="week-stat-value">${tc}</div><div class="week-stat-label">Completed</div></div>
-                    <div class="week-stat"><div class="week-stat-value">${tf}</div><div class="week-stat-label">Failed</div></div>
-                    <div class="week-stat"><div class="week-stat-value">${tt}</div><div class="week-stat-label">Tracked</div></div>
-                </div>
-            </div>`;
-        });
-        return html;
-    }
+            `;
+            
+            html += '</div>'; // End right column
+            html += '</div>'; // End two-column
 
-    // ─── Render: Yearly View ────────────────────────────────────
-    function renderYearly() {
-        const currentYear = state.selectedMonth.year;
-        let monthsData = [];
-        for (let m=0; m<12; m++) {
-            const data = state.yearData[`${currentYear}-${m}`] || initializeMonthData(currentYear, m);
-            let tc=0, tf=0, tt=0;
-            data.habits.forEach(h => h.days.forEach(s => {
-                if (s==='completed') tc++;
-                else if (s==='failed') tf++;
-                if (s!==null) tt++;
-            }));
-            const rate = tt>0 ? Math.round((tc/tt)*100) : 0;
-            const gc = data.goals.filter(g => g.title && g.steps.every(s=>s.completed||s.text==='')).length;
-            monthsData.push({ month:m, successRate:rate, totalCompleted:tc, totalTracked:tt, goalsCompleted:gc });
+            // Habit Tracker (full width)
+            html += `
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">✅</span>
+                        <h2 class="section-title">Habit Tracker</h2>
+                    </div>
+                    <div class="habit-table-container">
+                        <div class="habit-table-scroll">
+                            <table class="habit-table">
+                                <thead>
+                                    <tr>
+                                        <th>Habit</th>
+            `;
+            
+            // Day headers
+            for (let day = 1; day <= daysInMonth; day++) {
+                const date = new Date(state.selectedMonth.year, state.selectedMonth.month, day);
+                const isTodayClass = (isCurrentMonth && day === today.getDate()) ? 'today' : '';
+                html += `<th class="${isTodayClass}"><div>${day}</div><div>${getDayName(date)}</div></th>`;
+            }
+            
+            html += '<th>%</th></tr></thead><tbody>';
+            
+            // Habit rows
+            monthData.habits.forEach((habit, habitIndex) => {
+                const tracked = habit.days.filter(d => d !== null).length;
+                const completed = habit.days.filter(d => d === 'completed').length;
+                const successRate = tracked > 0 ? Math.round((completed / tracked) * 100) : 0;
+                
+                html += '<tr>';
+                html += `
+                    <td class="habit-name-cell">
+                        <input 
+                            type="text" 
+                            class="habit-name-input" 
+                            value="${habit.name}" 
+                            onchange="updateHabitName(${habitIndex}, this.value)"
+                        />
+                    </td>
+                `;
+                
+                habit.days.forEach((status, dayIndex) => {
+                    const statusClass = status || '';
+                    const symbol = status === 'completed' ? '✓' : (status === 'failed' ? '✗' : '');
+                    html += `
+                        <td>
+                            <div class="habit-cell ${statusClass}" 
+                                 onclick="toggleHabitDay(${habitIndex}, ${dayIndex})">${symbol}</div>
+                        </td>
+                    `;
+                });
+                
+                html += `<td class="success-rate">${successRate}%</td></tr>`;
+            });
+            
+            html += '</tbody></table></div></div></div>';
+            
+            return { html, chartData: chartData.dailyData };
         }
 
-        const totC  = monthsData.reduce((s,m)=>s+m.totalCompleted,0);
-        const totT  = monthsData.reduce((s,m)=>s+m.totalTracked,0);
-        const totG  = monthsData.reduce((s,m)=>s+m.goalsCompleted,0);
-        const avgS  = Math.round(monthsData.reduce((s,m)=>s+m.successRate,0)/12);
-
-        let html = `<div class="year-header">
-            <h1 class="year-title">${currentYear}</h1>
-            <div class="year-subtitle">Your Year in Review</div>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-card"><div class="stat-value">${avgS}%</div><div class="stat-label">Avg Success</div></div>
-            <div class="stat-card"><div class="stat-value">${totC}</div><div class="stat-label">Completed</div></div>
-            <div class="stat-card"><div class="stat-value">${totT}</div><div class="stat-label">Tracked</div></div>
-            <div class="stat-card"><div class="stat-value">${totG}</div><div class="stat-label">Goals Done</div></div>
-        </div>
-        <div class="months-grid">`;
-
-        monthsData.forEach(d => {
-            html += `<div class="month-card" onclick="selectMonth(${currentYear},${d.month})">
-                <div class="month-card-title">${getMonthName(d.month)}</div>
-                <div class="month-card-stats">
-                    <div class="month-stat"><div class="month-stat-value">${d.successRate}%</div><div class="month-stat-label">Success</div></div>
-                    <div class="month-stat"><div class="month-stat-value">${d.totalCompleted}</div><div class="month-stat-label">Completed</div></div>
-                    <div class="month-stat"><div class="month-stat-value">${d.totalTracked}</div><div class="month-stat-label">Tracked</div></div>
-                    <div class="month-stat"><div class="month-stat-value">${d.goalsCompleted}</div><div class="month-stat-label">Goals</div></div>
+        // Render Academic View
+        function renderAcademics() {
+            let html = `
+                <div class="page-header">
+                    <h1 class="page-title">Academic Progress</h1>
+                    <div class="page-subtitle">BBA Management • National University • Track your study goals</div>
                 </div>
-            </div>`;
+            `;
+
+            html += renderAcademicTracker();
+            html += renderStudyPlan();
+
+            // Overall Statistics
+            const totalChapters = state.academicData.subjects.length * 6;
+            const completedChapters = state.academicData.subjects.reduce((sum, s) => 
+                sum + s.chapters.filter(c => c).length, 0
+            );
+            const overallProgress = Math.round((completedChapters / totalChapters) * 100);
+            const subjectsCompleted = state.academicData.subjects.filter(s => 
+                s.chapters.every(c => c)
+            ).length;
+
+            html += `
+                <div class="section" style="margin-top: 32px;">
+                    <div class="section-header">
+                        <span class="section-icon">📊</span>
+                        <h2 class="section-title">Overall Statistics</h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">${overallProgress}%</div>
+                            <div class="stat-label">Overall Progress</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${completedChapters}</div>
+                            <div class="stat-label">Chapters Done</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${totalChapters - completedChapters}</div>
+                            <div class="stat-label">Chapters Left</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${subjectsCompleted}</div>
+                            <div class="stat-label">Subjects Done</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            return html;
+        }
+
+        // Render Weekly View
+        function renderWeekly() {
+            const monthData = getCurrentMonthData();
+            const daysInMonth = getDaysInMonth(state.selectedMonth.year, state.selectedMonth.month);
+            
+            let weeks = [];
+            let currentWeek = [];
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                const date = new Date(state.selectedMonth.year, state.selectedMonth.month, day);
+                currentWeek.push({ day, dayOfWeek: date.getDay() });
+                
+                if (date.getDay() === 6 || day === daysInMonth) {
+                    weeks.push([...currentWeek]);
+                    currentWeek = [];
+                }
+            }
+            
+            let html = `
+                <div class="page-header">
+                    <h1 class="page-title">Weekly Breakdown</h1>
+                    <div class="page-subtitle">${getMonthName(state.selectedMonth.month)} ${state.selectedMonth.year} • ${weeks.length} weeks</div>
+                </div>
+            `;
+            
+            weeks.forEach((week, weekIndex) => {
+                const dayIndices = week.map(d => d.day - 1);
+                let totalCompleted = 0;
+                let totalFailed = 0;
+                let totalTracked = 0;
+
+                monthData.habits.forEach(habit => {
+                    dayIndices.forEach(idx => {
+                        if (habit.days[idx] === 'completed') totalCompleted++;
+                        else if (habit.days[idx] === 'failed') totalFailed++;
+                        if (habit.days[idx] !== null) totalTracked++;
+                    });
+                });
+
+                const successRate = totalTracked > 0 ? Math.round((totalCompleted / totalTracked) * 100) : 0;
+                const startDay = week[0].day;
+                const endDay = week[week.length - 1].day;
+                
+                html += `
+                    <div class="week-card">
+                        <div class="week-header">
+                            <div class="week-title">Week ${weekIndex + 1}</div>
+                            <div class="week-dates">
+                                ${getMonthName(state.selectedMonth.month)} ${startDay}-${endDay}
+                            </div>
+                        </div>
+                        <div class="week-stats">
+                            <div class="week-stat">
+                                <div class="week-stat-value">${successRate}%</div>
+                                <div class="week-stat-label">Success Rate</div>
+                            </div>
+                            <div class="week-stat">
+                                <div class="week-stat-value">${totalCompleted}</div>
+                                <div class="week-stat-label">Completed</div>
+                            </div>
+                            <div class="week-stat">
+                                <div class="week-stat-value">${totalFailed}</div>
+                                <div class="week-stat-label">Failed</div>
+                            </div>
+                            <div class="week-stat">
+                                <div class="week-stat-value">${totalTracked}</div>
+                                <div class="week-stat-label">Tracked</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            return html;
+        }
+
+        // Render Yearly View
+        function renderYearly() {
+            const currentYear = state.selectedMonth.year;
+            let monthsData = [];
+            
+            for (let month = 0; month < 12; month++) {
+                const key = `${currentYear}-${month}`;
+                const data = state.yearData[key] || initializeMonthData(currentYear, month);
+                
+                let totalCompleted = 0;
+                let totalFailed = 0;
+                let totalTracked = 0;
+
+                data.habits.forEach(habit => {
+                    habit.days.forEach(status => {
+                        if (status === 'completed') totalCompleted++;
+                        else if (status === 'failed') totalFailed++;
+                        if (status !== null) totalTracked++;
+                    });
+                });
+
+                const successRate = totalTracked > 0 ? Math.round((totalCompleted / totalTracked) * 100) : 0;
+                const goalsCompleted = data.goals.filter(g => 
+                    g.title && g.steps.every(s => s.completed || s.text === '')
+                ).length;
+
+                monthsData.push({
+                    month,
+                    successRate,
+                    totalCompleted,
+                    totalTracked,
+                    goalsCompleted
+                });
+            }
+            
+            // Calculate year stats
+            const totalCompleted = monthsData.reduce((sum, m) => sum + m.totalCompleted, 0);
+            const totalTracked = monthsData.reduce((sum, m) => sum + m.totalTracked, 0);
+            const goalsCompleted = monthsData.reduce((sum, m) => sum + m.goalsCompleted, 0);
+            const avgSuccess = Math.round(monthsData.reduce((sum, m) => sum + m.successRate, 0) / 12);
+            
+            let html = `
+                <div class="year-header">
+                    <h1 class="year-title">${currentYear}</h1>
+                    <div class="year-subtitle">Your Year in Review</div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">${avgSuccess}%</div>
+                        <div class="stat-label">Avg Success</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${totalCompleted}</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${totalTracked}</div>
+                        <div class="stat-label">Tracked</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${goalsCompleted}</div>
+                        <div class="stat-label">Goals Done</div>
+                    </div>
+                </div>
+                
+                <div class="months-grid">
+            `;
+            
+            monthsData.forEach(data => {
+                html += `
+                    <div class="month-card" onclick="selectMonth(${currentYear}, ${data.month})">
+                        <div class="month-card-title">${getMonthName(data.month)}</div>
+                        <div class="month-card-stats">
+                            <div class="month-stat">
+                                <div class="month-stat-value">${data.successRate}%</div>
+                                <div class="month-stat-label">Success</div>
+                            </div>
+                            <div class="month-stat">
+                                <div class="month-stat-value">${data.totalCompleted}</div>
+                                <div class="month-stat-label">Completed</div>
+                            </div>
+                            <div class="month-stat">
+                                <div class="month-stat-value">${data.totalTracked}</div>
+                                <div class="month-stat-label">Tracked</div>
+                            </div>
+                            <div class="month-stat">
+                                <div class="month-stat-value">${data.goalsCompleted}</div>
+                                <div class="month-stat-label">Goals</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            return html;
+        }
+
+        // Update functions
+        function updateProtocol(index, value) {
+            const monthData = getCurrentMonthData();
+            monthData.protocols[index] = value;
+            updateMonthData({ protocols: monthData.protocols });
+        }
+
+        function updateHabitName(index, name) {
+            const monthData = getCurrentMonthData();
+            monthData.habits[index].name = name;
+            updateMonthData({ habits: monthData.habits });
+        }
+
+        function toggleHabitDay(habitIndex, dayIndex) {
+            const monthData = getCurrentMonthData();
+            const currentState = monthData.habits[habitIndex].days[dayIndex];
+            
+            let newState = null;
+            if (currentState === null) newState = 'completed';
+            else if (currentState === 'completed') newState = 'failed';
+            else newState = null;
+            
+            monthData.habits[habitIndex].days[dayIndex] = newState;
+            updateMonthData({ habits: monthData.habits });
+        }
+
+        function updateGoal(index, value) {
+            const monthData = getCurrentMonthData();
+            monthData.goals[index].title = value;
+            updateMonthData({ goals: monthData.goals });
+        }
+
+        function updateStep(goalIndex, stepIndex, value) {
+            const monthData = getCurrentMonthData();
+            monthData.goals[goalIndex].steps[stepIndex].text = value;
+            updateMonthData({ goals: monthData.goals });
+        }
+
+        function toggleStep(goalIndex, stepIndex) {
+            const monthData = getCurrentMonthData();
+            monthData.goals[goalIndex].steps[stepIndex].completed = 
+                !monthData.goals[goalIndex].steps[stepIndex].completed;
+            updateMonthData({ goals: monthData.goals });
+        }
+
+        function updateAchievement(index, value) {
+            const monthData = getCurrentMonthData();
+            monthData.achievements[index] = value;
+            updateMonthData({ achievements: monthData.achievements });
+        }
+
+        function updateNotes(value) {
+            updateMonthData({ notes: value });
+        }
+
+        // Main render function
+        function render() {
+            renderSidebar();
+            
+            let content = '';
+            let chartData = null;
+
+            if (state.view === 'monthly') {
+                const result = renderMonthly();
+                content = result.html;
+                chartData = result.chartData;
+            } else if (state.view === 'academics') {
+                content = renderAcademics();
+            } else if (state.view === 'weekly') {
+                content = renderWeekly();
+            } else if (state.view === 'yearly') {
+                content = renderYearly();
+            }
+            
+            document.getElementById('mainContent').innerHTML = content;
+
+            // Create chart after DOM is updated
+            if (chartData) {
+                setTimeout(() => createChart(chartData), 100);
+            }
+        }
+
+        // Initialize app
+        loadData();
+        render();
+
+        // Close modal on overlay click
+        document.getElementById('spModalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeStudyPlanModal();
         });
-        html += '</div>';
-        return html;
-    }
-
-    // ─── Update Handlers ────────────────────────────────────────
-    function updateProtocol(i, v)    { const d=getCurrentMonthData(); d.protocols[i]=v; updateMonthData({protocols:d.protocols}); }
-    function updateHabitName(i, n)   { const d=getCurrentMonthData(); d.habits[i].name=n; updateMonthData({habits:d.habits}); }
-    function toggleHabitDay(hi, di)  {
-        const d=getCurrentMonthData();
-        const cur=d.habits[hi].days[di];
-        d.habits[hi].days[di] = cur===null?'completed':(cur==='completed'?'failed':null);
-        updateMonthData({habits:d.habits});
-    }
-    function updateGoal(i, v)        { const d=getCurrentMonthData(); d.goals[i].title=v; updateMonthData({goals:d.goals}); }
-    function updateStep(gi, si, v)   { const d=getCurrentMonthData(); d.goals[gi].steps[si].text=v; updateMonthData({goals:d.goals}); }
-    function toggleStep(gi, si)      { const d=getCurrentMonthData(); d.goals[gi].steps[si].completed=!d.goals[gi].steps[si].completed; updateMonthData({goals:d.goals}); }
-    function updateAchievement(i, v) { const d=getCurrentMonthData(); d.achievements[i]=v; updateMonthData({achievements:d.achievements}); }
-    function updateNotes(v)          { updateMonthData({notes:v}); }
-
-    // ─── Main Render ────────────────────────────────────────────
-    function render() {
-        renderSidebar();
-        let content='', chartData=null;
-
-        if      (state.view==='monthly')   { const r=renderMonthly(); content=r.html; chartData=r.chartData; }
-        else if (state.view==='academics') { content=renderAcademics(); }
-        else if (state.view==='weekly')    { content=renderWeekly(); }
-        else if (state.view==='yearly')    { content=renderYearly(); }
-
-        document.getElementById('mainContent').innerHTML = content;
-        if (chartData) setTimeout(()=>createChart(chartData), 100);
-    }
-
-    // ─── Init ───────────────────────────────────────────────────
-    loadData();
-    render();
-
-    // Close modal on overlay click
-    document.getElementById('spModalOverlay').addEventListener('click', function(e) {
-        if (e.target === this) closeStudyPlanModal();
-    });
     </script>
 </body>
 </html>
