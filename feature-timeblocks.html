@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Time Blocks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; padding:20px; background:#fafafa; }
+        
+        /* ═══════════════════════════════════════════════════════
+           DAILY TIME BLOCKS COMPONENT
+        ═══════════════════════════════════════════════════════ */
+        .time-blocks-widget {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(102,126,234,0.25);
+            color: #fff;
+            margin-bottom: 24px;
+        }
+        
+        .tb-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        
+        .tb-title {
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tb-date {
+            font-size: 11px;
+            opacity: 0.85;
+            font-weight: 500;
+        }
+        
+        /* Fixed times banner */
+        .tb-fixed-times {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .tb-fixed-item {
+            text-align: center;
+        }
+        
+        .tb-fixed-label {
+            font-size: 10px;
+            opacity: 0.75;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .tb-fixed-time {
+            font-size: 18px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Time blocks */
+        .tb-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .tb-block {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            padding: 14px;
+            border: 1px solid rgba(255,255,255,0.18);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .tb-block:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateX(3px);
+        }
+        
+        .tb-block.completed {
+            background: rgba(72,187,120,0.25);
+            border-color: rgba(72,187,120,0.4);
+        }
+        
+        .tb-block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .tb-block-title {
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tb-block-icon {
+            font-size: 16px;
+        }
+        
+        .tb-block-time {
+            font-size: 11px;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+        
+        .tb-tasks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .tb-task-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 6px;
+            font-size: 12px;
+            transition: background 0.15s;
+        }
+        
+        .tb-task-item:hover {
+            background: rgba(255,255,255,0.14);
+        }
+        
+        .tb-task-checkbox {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.15s;
+        }
+        
+        .tb-task-checkbox:hover {
+            border-color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .tb-task-checkbox.checked {
+            background: #48bb78;
+            border-color: #48bb78;
+        }
+        
+        .tb-task-checkbox.checked::after {
+            content: '✓';
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        
+        .tb-task-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 12px;
+            font-family: inherit;
+            outline: none;
+        }
+        
+        .tb-task-input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .tb-task-input.completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        
+        .tb-add-task {
+            margin-top: 6px;
+            padding: 6px 10px;
+            background: rgba(255,255,255,0.08);
+            border: 1px dashed rgba(255,255,255,0.3);
+            border-radius: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 11px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.15s;
+        }
+        
+        .tb-add-task:hover {
+            background: rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.95);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        /* Progress bar at bottom */
+        .tb-progress {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .tb-progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            margin-bottom: 6px;
+            opacity: 0.85;
+        }
+        
+        .tb-progress-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .tb-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #48bb78, #38a169);
+            border-radius: 4px;
+            transition: width 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <!-- DAILY TIME BLOCKS WIDGET -->
+    <div class="time-blocks-widget">
+        <div class="tb-header">
+            <div class="tb-title">
+                <span>⏰</span>
+                Daily Time Blocks
+            </div>
+            <div class="tb-date" id="tbDate">Today</div>
+        </div>
+        
+        <!-- Fixed times -->
+        <div class="tb-fixed-times">
+            <div class="tb-fixed-item">
+                <div class="tb-fixed-label">Wake Up</div>
+                <div class="tb-fixed-time">6:50 AM</div>
+            </div>
+            <div class="tb-fixed-item">
+                <div class="tb-fixed-label">Sleep</div>
+                <div class="tb-fixed-time">12:00 AM</div>
+            </div>
+        </div>
+        
+        <!-- Time blocks -->
+        <div class="tb-blocks" id="tbBlocks"></div>
+        
+        <!-- Progress -->
+        <div class="tb-progress">
+            <div class="tb-progress-label">
+                <span>Daily Progress</span>
+                <span id="tbProgressText">0%</span>
+            </div>
+            <div class="tb-progress-bar">
+                <div class="tb-progress-fill" id="tbProgressFill" style="width:0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ═══════════════════════════════════════════════════════════════
+    // DAILY TIME BLOCKS DATA & LOGIC
+    // ═══════════════════════════════════════════════════════════════
+    
+    const TB_STORAGE_KEY = 'dailyTimeBlocks';
+    
+    // Default block structure
+    const DEFAULT_BLOCKS = [
+        {
+            id: 'morning',
+            title: 'Morning Block',
+            icon: '🌅',
+            timeRange: '6:50 AM - 12:00 PM',
+            tasks: [
+                { id: 1, text: '', completed: false }
+            ]
+        },
+        {
+            id: 'afternoon',
+            title: 'Afternoon Block',
+            icon: '☀️',
+            timeRange: '12:00 PM - 6:00 PM',
+            tasks: [
+                { id: 1, text: '', completed: false }
+            ]
+        },
+        {
+            id: 'evening',
+            title: 'Evening Block',
+            icon: '🌆',
+            timeRange: '6:00 PM - 9:00 PM',
+            tasks: [
+                { id: 1, text: '', completed: false }
+            ]
+        },
+        {
+            id: 'night',
+            title: 'Night Block',
+            icon: '🌙',
+            timeRange: '9:00 PM - 12:00 AM',
+            tasks: [
+                { id: 1, text: '', completed: false }
+            ]
+        }
+    ];
+    
+    let timeBlocks = [];
+    
+    // Load from localStorage
+    function loadTimeBlocks() {
+        const today = new Date().toDateString();
+        const stored = localStorage.getItem(TB_STORAGE_KEY);
+        
+        if (stored) {
+            const data = JSON.parse(stored);
+            // Check if it's today's data
+            if (data.date === today) {
+                timeBlocks = data.blocks;
+                return;
+            }
+        }
+        
+        // New day - reset to defaults
+        timeBlocks = JSON.parse(JSON.stringify(DEFAULT_BLOCKS));
+        saveTimeBlocks();
+    }
+    
+    function saveTimeBlocks() {
+        const today = new Date().toDateString();
+        localStorage.setItem(TB_STORAGE_KEY, JSON.stringify({
+            date: today,
+            blocks: timeBlocks
+        }));
+    }
+    
+    function toggleTaskCompletion(blockId, taskId) {
+        const block = timeBlocks.find(b => b.id === blockId);
+        const task = block.tasks.find(t => t.id === taskId);
+        task.completed = !task.completed;
+        saveTimeBlocks();
+        renderTimeBlocks();
+    }
+    
+    function updateTaskText(blockId, taskId, text) {
+        const block = timeBlocks.find(b => b.id === blockId);
+        const task = block.tasks.find(t => t.id === taskId);
+        task.text = text;
+        saveTimeBlocks();
+    }
+    
+    function addTask(blockId) {
+        const block = timeBlocks.find(b => b.id === blockId);
+        const newId = Math.max(0, ...block.tasks.map(t => t.id)) + 1;
+        block.tasks.push({ id: newId, text: '', completed: false });
+        saveTimeBlocks();
+        renderTimeBlocks();
+    }
+    
+    function renderTimeBlocks() {
+        const container = document.getElementById('tbBlocks');
+        container.innerHTML = '';
+        
+        timeBlocks.forEach(block => {
+            const allCompleted = block.tasks.every(t => t.completed && t.text.trim() !== '');
+            const hasContent = block.tasks.some(t => t.text.trim() !== '');
+            
+            const blockEl = document.createElement('div');
+            blockEl.className = `tb-block ${allCompleted && hasContent ? 'completed' : ''}`;
+            
+            blockEl.innerHTML = `
+                <div class="tb-block-header">
+                    <div class="tb-block-title">
+                        <span class="tb-block-icon">${block.icon}</span>
+                        ${block.title}
+                    </div>
+                    <div class="tb-block-time">${block.timeRange}</div>
+                </div>
+                <div class="tb-tasks-list">
+                    ${block.tasks.map(task => `
+                        <div class="tb-task-item">
+                            <div class="tb-task-checkbox ${task.completed ? 'checked' : ''}" 
+                                 onclick="toggleTaskCompletion('${block.id}', ${task.id})"></div>
+                            <input type="text" 
+                                   class="tb-task-input ${task.completed ? 'completed' : ''}" 
+                                   placeholder="Add task..." 
+                                   value="${task.text}"
+                                   onchange="updateTaskText('${block.id}', ${task.id}, this.value)"
+                                   onblur="updateTaskText('${block.id}', ${task.id}, this.value)">
+                        </div>
+                    `).join('')}
+                    <div class="tb-add-task" onclick="addTask('${block.id}')">+ Add Task</div>
+                </div>
+            `;
+            
+            container.appendChild(blockEl);
+        });
+        
+        updateProgress();
+    }
+    
+    function updateProgress() {
+        const allTasks = timeBlocks.flatMap(b => b.tasks).filter(t => t.text.trim() !== '');
+        const completedTasks = allTasks.filter(t => t.completed);
+        const progress = allTasks.length > 0 ? Math.round((completedTasks.length / allTasks.length) * 100) : 0;
+        
+        document.getElementById('tbProgressText').textContent = `${progress}%`;
+        document.getElementById('tbProgressFill').style.width = `${progress}%`;
+    }
+    
+    function updateDate() {
+        const today = new Date();
+        const options = { weekday: 'short', month: 'short', day: 'numeric' };
+        document.getElementById('tbDate').textContent = today.toLocaleDateString('en-US', options);
+    }
+    
+    // Init
+    loadTimeBlocks();
+    renderTimeBlocks();
+    updateDate();
+    </script>
+</body>
+</html>
